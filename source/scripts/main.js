@@ -85,13 +85,13 @@ function deHighLight(tag1, tag2) {
 // smooth scrolling
 // https://codepen.io/rleve/pen/iCbgy
 'use strict';
-var scrollButtons = document.querySelectorAll('.scroll-a');
+let scrollButtons = document.querySelectorAll('.scroll-a');
 for (let i = 0; i < scrollButtons.length; i++) {
     scrollButtons[i].addEventListener('click', function(e) {
         e.preventDefault();
 
-        var destID = scrollButtons[i].getAttribute('href');
-        var destElement = document.querySelector(destID);
+        let destID = scrollButtons[i].getAttribute('href');
+        let destElement = document.querySelector(destID);
 
         if (destElement) {
             smoothScroll(destElement);
@@ -100,7 +100,7 @@ for (let i = 0; i < scrollButtons.length; i++) {
 }
 
 // animate the scroll
-var smoothScroll = function (destElement) {
+let smoothScroll = function (destElement) {
     // Calculate how far and how fast to scroll
     let startY = window.pageYOffset;
     let endY = destElement.offsetTop;
