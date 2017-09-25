@@ -2,6 +2,8 @@ $nav-footer-color: rgb(38, 38, 38);
 $footer-color: rgb(63, 63, 63);
 $navbar-larger-height: 5.5vw;
 $navbar-smaller-height: 4vw;
+$navbar-larger-font:3vw;
+$navbar-smaller-font:2vw;
 $navbar-z-index: 999;
 
 body {
@@ -48,7 +50,8 @@ ul {
       }
 
       #top-a {
-        font-size: 3vw;
+        font-size: $navbar-larger-font;
+        transition: font-size 0.8s;
       }
     }
   }
@@ -56,6 +59,13 @@ ul {
 
 .navbar-shrink {
   height:$navbar-smaller-height;
+  ul {
+    li {
+      #top-a {
+        font-size: $navbar-smaller-font;
+      }
+    }
+  }
 }
 
 //@media only screen and (max-width: 320px) {
