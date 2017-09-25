@@ -1,17 +1,148 @@
 <!DOCTYPE html>
 <html lang="en">
+<!--<script src="https://use.fontawesome.com/9fb13bb8c7.js"></script>-->
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MP1 Starter</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
-<body>
+<body id="page-top" >
+    <header>
+        <!-- Navigation -->
+        <nav class="navbar">
+            <ul class="navbar-menu">
+                <li class="top-li">
+                    <a class="scroll-a" id="top-a" href="#page-top">MJ116</a>
+                </li>
+                <li class="albums-li">
+                    <a class="scroll-a" id="albums-a" href="#albums">Albums</a>
+                </li>
+                <li class="gallary-li">
+                    <a class="scroll-a" id="gallary-a" href="#gallary">Gallary</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
 
-    <h2>Welcome to MP1!</h2>
+
+    <div id="model1-div" class="model-hidden">
+        <ul class="song-list" >
+            <li>01 Intro</li>
+            <li>02 MJ Fresh Gang (ft. MC Hotdog)</li>
+            <li>03 Running (ft. J. Sheon)</li>
+            <li>04 Jungle</li>
+            <li>05 Skit (E-so)</li>
+            <li>06 SKRU UP</li>
+            <li>07 Man In the Mirror (ft. 魏如萱)</li>
+            <li>08 Skit(Kenzy)</li>
+            <li>09 Super Duper</li>
+            <li>10 Rap Star</li>
+            <li>11 Skit(Muta)</li>
+            <li>12 Just Believe</li>
+        </ul>
+    </div>
+
+    <div id="model2-div" class="model-hidden">
+        <ul class="song-list" >
+            <li>01 FLY OUT</li>
+            <li>02 迷途羔羊</li>
+            <li>03 超大行李</li>
+            <li>04 凡人</li>
+            <li>05 Coming home</li>
+            <li>06 當我們混在一起</li>
+        </ul>
+    </div>
+
+    <div id="model3-div" class="model-hidden">
+        <ul class="song-list" >
+            <li>01 YoLue</li>
+            <li>02 Time of Your Life</li>
+            <li>03 Motorbike</li>
+            <li>04 Call Me</li>
+            <li>05 Another Day</li>
+            <li>06 SKRU UP</li>
+        </ul>
+    </div>
+
+
+
+    <section class="video-sec full-width">
+
+            <video class="bg-video" autoplay playsinline muted>
+                <source src="../assets/bg_video.mp4" type="video/mp4">
+            </video>
+    </section>
+
+    <section class="three-col-sec full-width" id="albums">
+        <div class="container">
+            <p class="album-title">Alums</p>
+            <div class="cols">
+                <div class="album-div">
+                    <img src="../assets/fresh_game.jpg" id="album-img-1">
+                    <p>FRESH GAME</p>
+                    <p>2014-08</p>
+                </div>
+
+                <div class="album-div">
+                    <img src="../assets/fly_out.jpg" id="album-img-2">
+                    <p>FLY OUT</p>
+                    <p>2016-01</p>
+                </div>
+
+                <div class="album-div">
+                    <img src="../assets/skru_up.jpg" id="album-img-3">
+                    <p>SKRU UP</p>
+                    <p>2017-04</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="carousel-sec" id="gallary">
+        <i class="fa fa-chevron-circle-left carousel-btn" id="prev_btn" aria-hidden="true"></i>
+        <div class="slider" id="carousel-con">
+            <div class="slide" id="slide1"><img id="carousel-img1" src="../assets/slide_1.jpg"></div><div class="slide"><img id="carousel-img2" src="../assets/slide_2.jpg"></div><div class="slide"><img id="carousel-img3" src="../assets/slide_3.jpg"></div>
+        </div>
+        <i class="fa fa-chevron-circle-right carousel-btn" id="next_btn" aria-hidden="true"></i>
+    </section>
+
+
+    <footer>
+        <div class="footer-above">
+            <div class="container">
+                <p class="lets-be-social">Let's be social</p>
+                <ul class="social-list">
+                    <li>
+                        <i class="fa fa-twitter-square" aria-hidden="true"></i>
+                        <span class="twitter">Twitter</span>
+                    </li>
+                    <li>
+                        <i class="fa fa-facebook-square" aria-hidden="true"></i>
+                        <span class="facebook">Facebook</span>
+                    </li>
+                    <li>
+                        <i class="fa fa-google-plus-square" aria-hidden="true"></i>
+                        <span class="google">Google+</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer-below">
+            &copy; Siyang Liu 2017 All Rights Reserved
+        </div>
+    </footer>
 
     <script src="bundle.js" type="text/javascript"></script>
 </body>
 
 </html>
+
+<!--video-->
+<!--fix background - album -> three column, modol window can open -> list of songs -> animation-->
+
+<!--coursal - three people-->

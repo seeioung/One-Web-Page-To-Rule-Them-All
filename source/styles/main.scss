@@ -1,0 +1,263 @@
+$nav-footer-color: rgb(38, 38, 38);
+$footer-color: rgb(63, 63, 63);
+$navbar-larger-height: 5.5vw;
+$navbar-smaller-height: 4vw;
+$navbar-z-index: 999;
+
+body {
+  margin:0;
+  padding: 0;
+  position: relative;
+}
+a{
+  text-decoration: none;
+}
+ul {
+  list-style-type: none;
+}
+
+.navbar {
+  width: 100%;
+  background: $nav-footer-color;
+  position: fixed;
+  height:$navbar-larger-height;
+  z-index: $navbar-z-index;
+  transition: height 0.8s;
+
+
+  ul {
+    display: flex;
+    margin:0;
+    padding: 0;
+    height: 100%;
+    text-align: center;
+
+    li {
+      padding-left: 20px;
+      padding-right: 20px;
+      background-color: $nav-footer-color;
+      height: 100%;
+      display: flex;
+      align-items: center;
+
+      transition: background-color 0.5s;
+      a {
+        color: white;
+        font-size: 2vw;
+        font-family: Impact, Charcoal, sans-serif;
+      }
+
+      #top-a {
+        font-size: 3vw;
+      }
+    }
+  }
+}
+
+.navbar-shrink {
+  height:$navbar-smaller-height;
+}
+
+//@media only screen and (max-width: 320px) {
+//
+//  p {
+//    //font-size: 10vw;
+//  }
+//
+//}
+
+.video-sec {
+  background-color: brown;
+  width: 100%;
+  height: auto;
+
+  .bg-video {
+    display: block;
+    margin: auto;
+    width: 70%;
+    height: auto;
+  }
+
+}
+
+.three-col-sec {
+  background: url('../assets/bg-1.jpg') no-repeat fixed ;
+  background-size: cover;
+  width: 100%;
+  height: auto;
+  text-align: center;
+
+  .container {
+    width: 100%;
+    height: auto;
+
+    color: white;
+
+    p {
+      font-size: 2.5vw;
+      margin: 0;
+      padding: 3%;
+    }
+
+    .cols {
+      padding-bottom: 3%;
+      display: flex;
+      align-items: center;
+      justify-content: space-evenly;
+
+      .album-div {
+
+        display: block;
+
+        p {
+          font-size: 1.5vw;
+        }
+        img {
+          max-height: 100%;
+          max-width: 100%;
+          width: 200px;
+          height: auto;
+        }
+
+      }
+
+    }
+  }
+}
+
+
+$hidden-model-z:-999;
+$visible-model-z:998;
+
+@mixin hidden-model(){
+  position: fixed;
+  background-color: #0e0d1d;
+  width:50%;
+  height:auto;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  text-align: center;
+  z-index: $hidden-model-z;
+  overflow: scroll;
+  color: brown;
+  visibility: hidden;
+
+  ul {
+    padding:0;
+  }
+}
+
+.model-hidden{
+  @include hidden-model();
+
+}
+
+.model-visible{
+  visibility: visible;
+  z-index: $visible-model-z;
+  animation-name: fadeIn;
+  animation-duration: 1s;
+}
+
+@keyframes fadeIn {
+  from {opacity: .4}
+  to {opacity: 1}
+}
+
+
+.carousel-sec {
+  width: 96%;
+  height: auto;
+  padding: 2%;
+  background-color: brown;
+  position: relative;
+
+  .slider {
+    white-space: nowrap;
+    width:80%;
+    height: auto;
+    margin:auto;
+    overflow: hidden;
+
+    div {
+      white-space: normal;
+      display: inline-block;
+      width:100%;
+      height: auto;
+      transition: margin-left 0.8s;
+      img {
+        max-width: 100%;
+        display:block;
+      }
+    }
+
+  }
+
+  .carousel-btn {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    padding: 2%;
+    color: white;
+    font-size: 3vw;
+    z-index:600;
+  }
+
+  #next_btn {
+    right: 0;
+  }
+
+  #prev_btn{
+    left:0;
+  }
+
+}
+
+
+
+footer {
+  text-align: center;
+  width: 100%;
+  height: auto;
+
+  .footer-above{
+    padding: 2%;
+    font-size: 2vw;
+    background-color: $footer-color;
+
+    .lets-be-social{
+      padding-bottom: 1.5%;
+      color: #D96C30;
+    }
+
+    .social-list{
+      font-size: 1.5vw;
+      color: white;
+      display: flex;
+      justify-content: space-evenly;
+      padding-left: 10%;
+      padding-right: 10%;
+
+      li{
+
+        display: inline-block;
+
+        i{
+          color: #fff;
+          padding:1vw;
+        }
+
+      }
+    }
+  }
+
+  .footer-below{
+    background-color: $nav-footer-color;
+    color: #5b4b53;
+    padding: 0.5vw;
+    font-size: 1vw;
+  }
+}
+
