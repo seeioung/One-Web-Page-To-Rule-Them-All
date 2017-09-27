@@ -39,6 +39,16 @@ function removeClass(element, className) {
     element.className = newClasses;
 }
 
+function hasClass(element, className) {
+    let classes = element.className.split(" ");
+    for (let i = 0; i < classes.length; i++) {
+        if (classes[i] === className) {
+            return true;
+        }
+    }
+    return false;
+}
+
 // positon indicator
 function position_indicator() {
     let nav_bar = document.getElementsByClassName("navbar")[0];
@@ -133,44 +143,64 @@ function open_model(i){
     let model_id = "model" + i + "-div";
     let model_div = document.getElementById(model_id);
     addClass(model_div, 'model-visible');
+
+    removeClass(album_img_1, 'canClick');
+    removeClass(album_img_2, 'canClick');
+    removeClass(album_img_3, 'canClick');
+
 }
 
 function close_model(i) {
     let model_id = "model" + i + "-div";
     let model_div = document.getElementById(model_id);
     removeClass(model_div, 'model-visible');
+
+    addClass(album_img_1, 'canClick');
+    addClass(album_img_2, 'canClick');
+    addClass(album_img_3, 'canClick');
 }
 
+
+let album_img_1 = document.getElementById("album-img-1");
+let album_img_2 = document.getElementById("album-img-2");
+let album_img_3 = document.getElementById("album-img-3");
+
+album_img_1.addEventListener('click', function() {
+    console.log("click img 1");
+    if (hasClass(album_img_1, 'canClick')) {
+        open_model(1);
+    }
+});
+
+album_img_2.addEventListener('click', function() {
+    if (hasClass(album_img_2, 'canClick')) {
+        open_model(2);
+    }
+});
+
+
+album_img_3.addEventListener('click', function() {
+    if (hasClass(album_img_3, 'canClick')) {
+        open_model(3);
+    }
+});
+
 let model_div_1 = document.getElementById("model1-div");
+let model_div_2 = document.getElementById("model2-div");
+let model_div_3 = document.getElementById("model3-div");
+
 model_div_1.addEventListener('click', function() {
     close_model(1);
 });
 
-let model_div_2 = document.getElementById("model2-div");
 model_div_2.addEventListener('click', function() {
     close_model(2);
 });
 
-let model_div_3 = document.getElementById("model3-div");
 model_div_3.addEventListener('click', function() {
     close_model(3);
 });
 
-
-let album_img_1 = document.getElementById("album-img-1");
-album_img_1.addEventListener('click', function() {
-    open_model(1);
-});
-
-let album_img_2 = document.getElementById("album-img-2");
-album_img_2.addEventListener('click', function() {
-    open_model(2);
-});
-
-let album_img_3 = document.getElementById("album-img-3");
-album_img_3.addEventListener('click', function() {
-    open_model(3);
-});
 
 
 // carousel
